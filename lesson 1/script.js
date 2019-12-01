@@ -3,6 +3,10 @@
 let money;
 let time;
 
+
+alert( +"Infinity" ); 
+console.log(0 || "" || 2 || undefined || true || falsе);
+
 while(isNaN(money) || typeof money != "number"){
     money = parseInt(prompt("Ваш бюджет на месяц?", 0), 10);
     console.log(money);
