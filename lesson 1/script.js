@@ -4,7 +4,7 @@ let money;
 let time;
 
 
-alert( +"Infinity" ); 
+/* alert( +"Infinity" ); 
 console.log(0 || "" || 2 || undefined || true || falsе);
 
 while(isNaN(money) || typeof money != "number"){
@@ -17,7 +17,7 @@ while(isNaN(money) || typeof money != "number"){
     console.log(isNaN(money));
     console.log(typeof money != "number");
 } 
-
+ */
 time = new Date (prompt("Введите дату в формате YYYY-MM-DD?", "2019-11-27"));
 
 let expenses = {};
@@ -34,10 +34,25 @@ let appData = {
     expenses: expenses,
     optionalExpenses: optionalExpenses,
     income: income,
-    savings: false
+    savings: false,
+    chooseIncome: function () {
+        let items = prompt("Что принесет доход? Перечислите через запятую.",'')
+        appData.income = items.split(',');
+        appData.income.push(prompt("Может еще что?",""));
+        appData.income.sort();
+       
+        appData.income.forEach(function(item,index,arr){
+            console.log("" + item + " / " + index + " / " + arr);
+        })
+
+        for(const key in appData){
+            console.log("for in =" + key); 
+        }
+    }
 }
 
-appData.moneyPerDay = (appData.budget / 30).toFixed(2);
+//appData.chooseIncome();
+/* appData.moneyPerDay = (appData.budget / 30).toFixed(2);
 alert(appData.moneyPerDay);
 
 for(let i = 0; i < 2; i++){
@@ -82,4 +97,6 @@ while (i < 2){
     } else{
        console.log("No done");
     } 
-}
+} */
+
+
